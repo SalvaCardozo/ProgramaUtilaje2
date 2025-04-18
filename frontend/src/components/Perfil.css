@@ -1,0 +1,18 @@
+/* Perfil.css */
+
+.perfil-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.perfil-page h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.perfil-page p {
+    font-size: 1rem;
+    color: #666;
+}

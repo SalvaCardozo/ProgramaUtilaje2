@@ -1,0 +1,24 @@
+/* Estilos para las notas */
+.notas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nota {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.nota p {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.nota-actions {
+    display: flex;
+    gap: 10px;
+}

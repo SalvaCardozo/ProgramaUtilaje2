@@ -1,0 +1,266 @@
+/* Sidebar.css */
+
+/* Estilo general del sidebar */
+.sidebar {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #f7f9fc; /* Fondo gris claro */
+    color: #333; /* Texto oscuro para contraste */
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Efecto de deslizamiento suave */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border-radius: 0 15px 15px 0; /* Esquinas curvas en el lado derecho */
+    overflow: hidden; /* Asegura que el contenido no se desborde al colapsar */
+}
+
+/* Estado colapsado (solo íconos visibles) */
+.sidebar.collapsed {
+    width: 60px; /* Ancho reducido cuando está colapsado */
+}
+
+/* Estado expandido (íconos + texto) */
+.sidebar.expanded {
+    width: 170px; /* Ancho completo cuando está expandido */
+}
+
+/* Logo en la parte superior */
+.sidebar-logo {
+    display: flex;
+    flex-direction: column; /* Apilar el logo y el texto verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea divisoria */
+    height: 60px; /* Altura fija para incluir el texto cuando está expandido */
+    box-sizing: border-box; /* Asegura que el padding no afecte la altura */
+}
+
+/* Tamaño del logo según el estado */
+.logo-img {
+    border-radius: 10%; /* Circular */
+    object-fit: contain; /* Ajusta la imagen sin recortarla */
+    margin-bottom: 0.5rem; /* Espacio entre el logo y el texto */
+}
+
+.logo-img.large {
+    width: 40px; /* Tamaño más grande cuando está colapsado */
+    height: 40px;
+}
+
+.logo-img.small {
+    width: 40px; /* Tamaño más pequeño cuando está expandido */
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 0.6rem; /* Texto pequeño */
+    font-weight: 500;
+    color: #333;
+    font-family: 'Roboto', sans-serif; /* Fuente profesional */
+    letter-spacing: 0.5px; /* Espaciado entre letras para un look elegante */
+    text-align: center; /* Centrar el texto */
+    white-space: nowrap; /* Evitar que el texto se divida en dos líneas */
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease; /* Efecto de desvanecimiento */
+}
+
+/* Mostrar el texto con desvanecimiento cuando está expandido */
+.sidebar.expanded .logo-text {
+    opacity: 1; /* Visible con desvanecimiento */
+}
+
+/* Botón de hamburguesa */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 20px; /* Líneas más pequeñas */
+    height: 2px;
+    background-color: #666; /* Color gris para las líneas */
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Animación de la hamburguesa al expandir/colapsar */
+.sidebar.expanded .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.sidebar.expanded .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.sidebar.expanded .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navegación */
+.sidebar-nav {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.sidebar-spacer {
+    flex-grow: 1; /* Empuja los últimos elementos hacia abajo */
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 1rem; /* Padding consistente */
+    color: #666; /* Color gris para el texto */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 170px; /* Ancho fijo ajustado al nuevo ancho del sidebar expandido */
+    position: relative; /* Para el menú desplegable */
+}
+
+.sidebar-item:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo al pasar el mouse */
+    color: #1e90ff; /* Color azul al pasar el mouse */
+}
+
+.sidebar-item.active {
+    background-color: #e6f0fa; /* Fondo para la opción activa */
+    color: #1e90ff; /* Color azul para la opción activa */
+}
+
+.sidebar-icon {
+    font-size: 1rem; /* Íconos más pequeños */
+    width: 20px; /* Ancho fijo para alinear íconos */
+    text-align: center;
+    margin-right: 0.8rem; /* Espacio reducido */
+    color: #999; /* Íconos grises */
+    transition: color 0.3s ease;
+    flex-shrink: 0; /* Asegura que el ícono no se encoja */
+}
+
+.sidebar-item:hover .sidebar-icon,
+.sidebar-item.active .sidebar-icon {
+    color: #1e90ff; /* Íconos azules al pasar el mouse o estar activo */
+}
+
+.sidebar-text {
+    font-size: 0.85rem; /* Texto más pequeño */
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.sidebar.expanded .sidebar-text {
+    opacity: 1; /* Visible cuando el sidebar está expandido */
+}
+
+/* Estilo del ícono de perfil y menú desplegable */
+.profile-item {
+    cursor: pointer;
+}
+
+.profile-menu {
+    position: fixed; /* Usamos fixed para que pueda sobresalir del sidebar */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    width: 150px; /* Ancho fijo del menú */
+}
+
+.profile-menu-item {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-menu-item:hover {
+    background-color: #e6f0fa;
+    color: #1e90ff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar.collapsed {
+        width: 60px; /* Ancho más pequeño en móviles */
+    }
+
+    .sidebar.expanded {
+        width: 170px; /* Ancho reducido en móviles */
+    }
+
+    .sidebar-logo {
+        height: 80px; /* Altura reducida en móviles */
+    }
+
+    .logo-img.large {
+        width: 45px; /* Tamaño más grande en móviles cuando está colapsado */
+        height: 45px;
+    }
+
+    .logo-img.small {
+        width: 35px; /* Tamaño más pequeño en móviles cuando está expandido */
+        height: 35px;
+    }
+
+    .logo-text {
+        font-size: 0.65rem; /* Texto más pequeño en móviles */
+    }
+
+    .sidebar-item {
+        padding: 0.5rem 1rem;
+        width: 170px; /* Ancho fijo en móviles */
+    }
+
+    .sidebar-icon {
+        font-size: 0.9rem;
+    }
+
+    .sidebar-text {
+        font-size: 0.8rem;
+    }
+
+    .profile-menu {
+        width: 120px; /* Menú más pequeño en móviles */
+    }
+
+    .profile-menu-item {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajustar el contenido principal cuando el sidebar cambia de tamaño */
+@media (min-width: 769px) {
+    .main-content {
+        transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .main-content {
+        margin-left: 60px; /* Espacio para el sidebar colapsado */
+    }
+
+    .sidebar.expanded ~ .main-content {
+        margin-left: 170px; /* Espacio para el sidebar expandido */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar.collapsed ~ .main-content {
+        margin-left: 60px;
+    }
+
+    .sidebar.expanded ~ .main-content {
+        margin-left: 170px;
+    }
+}

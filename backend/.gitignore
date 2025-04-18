@@ -1,0 +1,13 @@
+ECHO est� activado.
+
+# Ignorar el archivo de variables de entorno
+.env
+
+# Ignorar el directorio de dependencias
+node_modules/
+
+# Ignorar archivos de logs
+logs/
+
+# Ignorar archivos subidos
+uploads/

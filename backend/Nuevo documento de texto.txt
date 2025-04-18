@@ -1,0 +1,26 @@
+constraseña1:
+$2b$10$t6GIZPzJzeigioTxq0xVu.VpJMPun0XuK25zuVGoMuwt5vkYiTLZu
+
+$2b$10$m8/uEauXRJx4Up2z2TAcwOG3E48n5Bb.amtuFSpsU/RkTGxEU3BSS
+
+constraseña2:
+$2b$10$TDIpVVws7kvLS9yaeIkis.n63T2CLGHcVNRhdHtqEjXgb6DPVIHQ2
+jefe123:
+$2b$10$LfnmpDy50Z.WC0eD3U0anODkoi4Mc965Raoh9ZDQYstoFDy97lw0C
+
+
+
+
+
+Hash para bd metalurgica_roma y el usuario admin:
+$2b$12$EpX7uDbtp2PbcIgmEd3vfeCIQoMthrw9vrFKqDaXQW9B1w7RVi/DS
+
+
+admin
+$2b$12$EpX7uDbtp2PbcIgmEd3vfeCIQoMthrw9vrFKqDaXQW9B1w7RVi/DS
+
+
+$2b$12$gHrsTUOQt02M/C5oF0tf.OVxy7GHJt7bv5jLK1w.5eSj8hqpav7HS
+
+
+{"username": "admin", "password": "admin123"}

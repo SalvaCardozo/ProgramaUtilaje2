@@ -1,0 +1,258 @@
+/* Inicio.css */
+
+.inicio-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f7f9fc 0%, #e6f0fa 100%); /* Fondo degradado elegante */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    padding: 2rem;
+    padding-left: 60px; /* Espacio mínimo para el sidebar colapsado */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido */
+}
+
+/* Ajustar el padding según el estado del sidebar */
+@media (min-width: 769px) {
+    .sidebar.expanded ~ .inicio-container {
+        padding-left: 170px; /* Espacio para el sidebar expandido */
+    }
+}
+
+/* Centrar las secciones */
+.hero-content,
+.stats-section,
+.services-section {
+    max-width: 1200px; /* Ancho máximo para las secciones */
+    width: 100%;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Hero Section (sin tarjeta, directamente sobre el fondo) */
+.hero-content {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.hero-logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #1e90ff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.separator-line {
+    width: 500px; /* Ancho de la línea */
+    height: 1px; /* Grosor fino */
+    background: rgba(0, 0, 0, 0.2); /* Color suave */
+    margin: 1rem auto; /* Centrar y espaciar */
+}
+
+.area-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #444; /* Color más profesional */
+    font-weight: 500;
+}
+
+/* Estadísticas */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    width: 200px;
+    margin: 1rem;
+}
+
+.stat-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    color: #444; /* Color más profesional (gris oscuro) */
+}
+
+/* Servicios */
+.services-section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 250px;
+    margin: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #1e90ff;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: #1e8fff9b; /* Color más profesional (gris oscuro) */
+    color: #ffffff;
+    margin-top: 3rem;
+    border-radius: 10px;
+
+}
+
+.full-width-footer {
+    width: 100%; /* Ocupar el ancho del contenedor padre */
+    margin-left: -60px; /* Compensar el padding-left del contenedor (sidebar colapsado) */
+    margin-right: -2rem; /* Compensar el padding-right del contenedor */
+    margin-bottom: 0; /* Asegurar que no haya margen inferior */
+}
+
+/* Ajustar los márgenes del footer según el estado del sidebar */
+@media (min-width: 769px) {
+    .sidebar.expanded ~ .inicio-container .full-width-footer {
+        margin-left: -170px; /* Compensar el padding-left cuando el sidebar está expandido */
+        margin-right: -2rem;
+    }
+}
+
+/* Asegurar que el footer se alinee correctamente en móviles */
+@media (max-width: 768px) {
+    .full-width-footer {
+        margin-left: -60px; /* Ajuste para móviles */
+        margin-right: -1rem;
+    }
+}
+
+.footer p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .inicio-container {
+        padding-left: 60px;
+        padding: 1rem;
+    }
+
+    .hero-content {
+        padding: 2rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .area-text {
+        font-size: 0.9rem;
+    }
+
+    .stat-card {
+        width: 150px;
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card {
+        width: 200px;
+        padding: 1.5rem;
+    }
+
+    .services-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio-container {
+        padding-left: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .area-text {
+        font-size: 0.8rem;
+    }
+}
